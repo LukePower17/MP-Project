@@ -1,63 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menu" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Player Stats" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clan Stats" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <TextView
+            android:layout_width="431dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="116dp"
+            android:layout_marginBottom="43dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Welcome to Clash of Stats!"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="36sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="305dp"
+            app:srcCompat="@drawable/barbarian2" />
+
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:text="To get started, please enter your Clash of Clans account ID"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="375dp"
-                android:layout_height="172dp"
-                android:layout_marginEnd="116dp"
-                android:layout_marginBottom="43dp"
-                android:fontFamily="sans-serif-black"
-                android:text="Welcome to Clash of Stats!"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="36sp" />
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="420dp"
+            android:layout_height="59dp"
+            android:layout_marginEnd="153dp"
+            android:layout_marginBottom="76dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="ID" />
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="413dp"
-                android:layout_height="260dp"
-                android:layout_marginEnd="147dp"
-                android:layout_marginBottom="97dp" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="398dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="120dp"
-                android:layout_marginBottom="245dp"
-                android:fontFamily="sans-serif-black"
-                android:text="To get started, please enter your Clash of Clans user ID: "
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="24sp" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName"
-                android:layout_width="420dp"
-                android:layout_height="59dp"
-                android:layout_marginEnd="153dp"
-                android:layout_marginBottom="76dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="ID" />
-        </LinearLayout>
+    </LinearLayout>
 
 
-    </ScrollView>
-
-</LinearLayout>
+</ScrollView>

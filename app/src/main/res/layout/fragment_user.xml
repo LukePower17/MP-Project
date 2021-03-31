@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="389dp"
+        android:layout_height="154dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="577dp"
+        android:gravity="center"
+        android:text="@string/hello_blank_fragment"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="248dp"
+        android:layout_marginBottom="474dp"
+        android:text="Your clan: " />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="132dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="212dp"
+        android:layout_marginBottom="444dp"
+        android:text="Your townhall level: " />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="212dp"
+        android:layout_marginBottom="409dp"
+        android:text="Your trophies: " />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="216dp"
+        android:layout_marginBottom="372dp"
+        android:text="Your max trophies: " />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="176dp"
+        android:layout_height="236dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="103dp"
+        android:layout_marginBottom="66dp"
+        android:src="@drawable/sneaky_archer_info" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="157dp"
+        android:layout_marginBottom="542dp"
+        android:text="Your in game name:" />
+
+</RelativeLayout>

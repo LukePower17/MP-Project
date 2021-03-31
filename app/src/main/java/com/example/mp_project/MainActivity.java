@@ -2,7 +2,15 @@ package com.example.mp_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,10 +19,42 @@ public class MainActivity extends AppCompatActivity {
     //Allowed IP:
     //68.35.249.149
 
+    EditText userID;
+    TextView idTV;
+    Button submit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Context context = getApplicationContext();
+        int duration = Toast.LENGTH_LONG;
+
+        userID = (EditText)findViewById(R.id.userId);
+        submit = (Button)findViewById(R.id.submitBtn);
+        idTV = (TextView)findViewById(R.id.idTextView);
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(userID.getText().toString().equals(""))
+                {
+                    Toast toast = Toast.makeText(context, "Please enter a valid ID", duration);
+                    toast.show();
+                    idTV.setTextColor(Color.RED);
+                }
+                else
+                {
+                    Intent HomeActivityIntent = new Intent(MainActivity.this, ClashAPI.class);
+                    HomeActivityIntent.putExtra("id", userID.getText().toString());
+                    startActivity(HomeActivityIntent);
+                }
+            }
+        });
+
+
 
         //https://api.clashofclans.com/v1/players/%23YOGVVRGU
     }

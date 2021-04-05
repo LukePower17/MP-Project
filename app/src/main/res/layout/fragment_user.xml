@@ -22,43 +22,47 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="96dp"
+        android:layout_width="102dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="248dp"
-        android:layout_marginBottom="474dp"
-        android:text="Your clan: " />
+        android:layout_marginEnd="243dp"
+        android:layout_marginBottom="473dp"
+        android:text="Your clan: "
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="132dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="212dp"
+        android:layout_marginEnd="184dp"
         android:layout_marginBottom="444dp"
-        android:text="Your townhall level: " />
+        android:text="Your townhall level: "
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="131dp"
+        android:layout_width="118dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="212dp"
+        android:layout_marginEnd="226dp"
         android:layout_marginBottom="409dp"
-        android:text="Your trophies: " />
+        android:text="Your trophies: "
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="127dp"
+        android:layout_width="156dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="216dp"
-        android:layout_marginBottom="372dp"
-        android:text="Your max trophies: " />
+        android:layout_marginEnd="188dp"
+        android:layout_marginBottom="373dp"
+        android:text="Your max trophies: "
+        android:textSize="18sp" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -66,18 +70,74 @@
         android:layout_height="236dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="103dp"
-        android:layout_marginBottom="66dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="65dp"
         android:src="@drawable/sneaky_archer_info" />
 
     <TextView
         android:id="@+id/textView7"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="181dp"
+        android:layout_marginBottom="504dp"
+        android:text="Your in game name:"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/ignTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="157dp"
-        android:layout_marginBottom="542dp"
-        android:text="Your in game name:" />
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="505dp"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/clanTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="67dp"
+        android:layout_marginBottom="473dp"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/townhallTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="67dp"
+        android:layout_marginBottom="445dp"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/trophiesTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="409dp"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/maxTrophiesTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="372dp"
+        android:text="TextView"
+        android:textSize="18sp" />
 
 </RelativeLayout>

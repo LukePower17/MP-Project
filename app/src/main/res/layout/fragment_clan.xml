@@ -51,6 +51,6 @@
         android:layout_marginBottom="483dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="ID" />
+        android:text="" />
 
 </RelativeLayout>

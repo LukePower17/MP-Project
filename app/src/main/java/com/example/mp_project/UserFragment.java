@@ -8,6 +8,8 @@ import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +32,8 @@ public class UserFragment extends Fragment {
     String MyID = "#Y0GVVRGU";
     String GID = "#UPGPCGVU";
     String MyClan = "#PO2CUUUU";
+    Player player = null;
+    ClanModel clan = null;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -83,6 +87,7 @@ public class UserFragment extends Fragment {
         TextView maxTrophiesView = (TextView) view.findViewById(R.id.maxTrophiesTv);
         TextView clanTv = (TextView) view.findViewById(R.id.clanTv);
         TextView thTv = (TextView) view.findViewById(R.id.townhallTv);
+        EditText idEt = (EditText) view.findViewById(R.id.userIdEt);
 
 
         int SDK_INT = android.os.Build.VERSION.SDK_INT;
@@ -95,32 +100,43 @@ public class UserFragment extends Fragment {
             ClashAPI clashAPI = new ClashAPI(API_TOKEN);
 
             // 2. And do the requests you need. Yes, it's as simple :)
-            Player player = null;
-            ClanModel clan = null;
+//            Player player = null;
+//            ClanModel clan = null;
 
-            try {
-                player = clashAPI.getPlayer(GID);
-                int townhallLevel = player.getTownHallLevel();
-                String clanRole = player.getRole();
-                String ign = player.getName();
-                clan = player.getClan();
-                String clanName = clan.getName();
-                int trophies = player.getTrophies();
-                int maxTrophies = player.getBestTrophies();
+            Button button = (Button) view.findViewById(R.id.button);
+            button.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    try
+                    {
+                        player = clashAPI.getPlayer(idEt.getText().toString());
+                        int townhallLevel = player.getTownHallLevel();
+                        String clanRole = player.getRole();
+                        String ign = player.getName();
+                        clan = player.getClan();
+                        String clanName = clan.getName();
+                        int trophies = player.getTrophies();
+                        int maxTrophies = player.getBestTrophies();
 
 
-                ignView.setText(ign);
-                trophiesView.setText(""+trophies);
-                maxTrophiesView.setText(""+maxTrophies);
-                clanTv.setText(clanName);
-                thTv.setText(""+townhallLevel);
+                        ignView.setText(ign);
+                        trophiesView.setText(""+trophies);
+                        maxTrophiesView.setText(""+maxTrophies);
+                        clanTv.setText(clanName);
+                        thTv.setText(""+townhallLevel);
 
-                List<Troop> heroes = player.getHeroes();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ClashAPIException e) {
-                e.printStackTrace();
-            }
+                        List<Troop> heroes = player.getHeroes();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (ClashAPIException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+
         }
 
 //        Toast toast = Toast.makeText(context, clanRole, duration);

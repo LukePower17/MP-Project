@@ -1,104 +1,115 @@
 package com.example.mp_project;
 
-import android.os.Bundle;
+import com.example.mp_project.exception.ClashException;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
+import org.json.JSONException;
 
-import com.google.android.material.tabs.TabLayout;
-
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.List;
 
-public class ClashAPI extends AppCompatActivity {
+/**
+ * An API that contains operations listed at <a href="https://developer.clashofclans.com/#/documentation">https://developer.clashofclans.com/#/documentation</a>
+ * <p/>
+ * <p>To get an instance of {@code ClashAPI}, invoke {@link BTClashWrapper#getAPIInstance(String apiToken)} with your API token</p>
+ */
+public interface ClashAPI {
 
-    TabLayout tabLayout;
-    ViewPager viewPager;
+    /**
+     * Requests and returns full clan information of the specified clan
+     *
+     * @param clan the clan to request information on
+     * @return a clan object with full clan data
+     * @throws IOException    if an I/O error occurs
+     * @throws ClashException if an error with the API call occurs
+     */
+    Clan requestClan(ClanData clan) throws IOException, ClashException, JSONException;
 
-    public ClashAPI()
-    {
-    }
+    /**
+     * Requests and returns full clan information of the specified clan
+     *
+     * @param clanTag the tag of the clan to request information on
+     * @return a clan object with full clan data
+     * @throws IOException    if an I/O error occurs
+     * @throws ClashException if an error with the API call occurs
+     */
+    Clan requestClan(String clanTag) throws IOException, ClashException, JSONException;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.clashapi);
+    /**
+     * Requests and returns the list of members in the specified clan
+     *
+     * @param clan the clan to request members of
+     * @return a list containing the members belonging to the specified clan
+     * @throws IOException    if an I/O error occurs
+     * @throws ClashException if an error with the API call occurs
+     */
+    List<ClanMember> requestClanMembers(ClanData clan) throws IOException, ClashException, JSONException;
 
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
+    /**
+     * Requests and returns the list of members in the specified clan
+     *
+     * @param clanTag the tag of the clan to request members of, which must start with #
+     * @return a list containing the members belonging to the specified clan
+     * @throws IOException    if an I/O error occurs
+     * @throws ClashException if an error with the API call occurs
+     */
+    List<ClanMember> requestClanMembers(String clanTag) throws IOException, ClashException, JSONException;
 
-            String id = extras.getString("id");
-        }
+    /**
+     * Requests and returns the list of locations
+     *
+     * @return the list of locations
+     * @throws IOException    if an I/O error occurs
+     * @throws ClashException if an error with the API call occurs
+     */
+    List<ClanLocation> requestLocations() throws IOException, ClashException, JSONException;
 
-        tabLayout = findViewById(R.id.tab_layout);
-        viewPager = findViewById(R.id.view_pager);
+    /**
+     * Requests and returns the top leaderboard clans for a specified location
+     *
+     * @param location the location to request leaderboard information on
+     * @return a list of the top clans with the specified location
+     * @throws IOException    if an I/O error occurs
+     * @throws ClashException if an error with the API call occurs
+     */
+    List<AbbreviatedClan> requestTopClans(ClanLocation location) throws IOException, ClashException, JSONException;
 
-        ArrayList<String> arrayList = new ArrayList<>();
-        arrayList.add("User Stats");
-        arrayList.add("Clan Stats");
+    /**
+     * Requests and returns the top leaderboard clans for a specified location
+     *
+     * @param locationId the id of the location to request leaderboard information on
+     * @return a list of the top clans with the specified location
+     * @throws IOException    if an I/O error occurs
+     * @throws ClashException if an error with the API call occurs
+     */
+    List<AbbreviatedClan> requestTopClans(int locationId) throws IOException, ClashException, JSONException;
 
-        prepareViewPager(viewPager,arrayList);
+    /**
+     * Requests and returns the top leaderboard players for a specified location
+     *
+     * @param location the location to request leaderboard information on
+     * @return a list of the top players with the specified location
+     * @throws IOException    if an I/O error occurs
+     * @throws ClashException if an error with the API call occurs
+     */
+    List<LeaderboardPlayer> requestTopPlayers(ClanLocation location) throws IOException, ClashException, JSONException;
 
-        tabLayout.setupWithViewPager(viewPager);
+    /**
+     * Requests and returns the top leaderboard players for a specified location
+     *
+     * @param locationId the id of the location to request leaderboard information on
+     * @return a list of the top players with the specified location
+     * @throws IOException    if an I/O error occurs
+     * @throws ClashException if an error with the API call occurs
+     */
+    List<LeaderboardPlayer> requestTopPlayers(int locationId) throws IOException, ClashException, JSONException;
 
-
-    }
-
-    private void prepareViewPager(ViewPager viewPager, ArrayList<String> arrayList) {
-        MainAdapter adapter = new MainAdapter(getSupportFragmentManager());
-
-        UserFragment userFragment = new UserFragment();
-
-        Bundle bundle = new Bundle();
-        bundle.putString("title", arrayList.get(0));
-        userFragment.setArguments(bundle);
-        adapter.addFragment(userFragment,arrayList.get(0));
-
-        ClanFragment clanFragment = new ClanFragment();
-
-        Bundle bundle2 = new Bundle();
-        bundle2.putString("title", arrayList.get(1));
-        clanFragment.setArguments(bundle2);
-        adapter.addFragment(clanFragment,arrayList.get(1));
-
-        viewPager.setAdapter(adapter);
-
-    }
-
-    private class MainAdapter extends FragmentPagerAdapter {
-
-        ArrayList<String> arrayList = new ArrayList<>();
-        List<Fragment> fragmentList = new ArrayList<>();
-        public void addFragment(Fragment fragment, String title)
-        {
-            arrayList.add(title);
-            fragmentList.add(fragment);
-        }
-
-        public MainAdapter(@NonNull FragmentManager fm) {
-            super(fm);
-        }
-
-        @NonNull
-        @Override
-        public Fragment getItem(int position) {
-            return fragmentList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return fragmentList.size();
-        }
-
-        @Nullable
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return arrayList.get(position);
-        }
-    }
+    /**
+     * Returns search results for a specified clan search request
+     *
+     * @param request a manually-instantiated @{link ClanSearchRequest} object that contains information on search paramaters
+     * @return the list of clans returned by the search
+     * @throws IOException    if an I/O error occurs
+     * @throws ClashException if an error with the API call occurs
+     */
+    List<AbbreviatedClan> searchClans(ClanSearchRequest request) throws IOException, ClashException, JSONException;
 }

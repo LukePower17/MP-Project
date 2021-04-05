@@ -27,12 +27,12 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClashAPI extends AppCompatActivity {
+public class TestClashAPI extends AppCompatActivity {
 
     TabLayout tabLayout;
     ViewPager viewPager;
 
-    public ClashAPI()
+    public TestClashAPI()
     {
     }
 

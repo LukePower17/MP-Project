@@ -81,12 +81,12 @@ public class UserFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_user, container, false);
 
-        TextView textView = view.findViewById(R.id.text_view);
         TextView ignView = (TextView) view.findViewById(R.id.ignTv);
         TextView trophiesView = (TextView) view.findViewById(R.id.trophiesTv);
         TextView maxTrophiesView = (TextView) view.findViewById(R.id.maxTrophiesTv);
         TextView clanTv = (TextView) view.findViewById(R.id.clanTv);
         TextView thTv = (TextView) view.findViewById(R.id.townhallTv);
+        TextView roleTv = (TextView) view.findViewById(R.id.roleTv);
         EditText idEt = (EditText) view.findViewById(R.id.userIdEt);
 
 
@@ -112,20 +112,35 @@ public class UserFragment extends Fragment {
                     try
                     {
                         player = clashAPI.getPlayer(idEt.getText().toString());
-                        int townhallLevel = player.getTownHallLevel();
+                        clan = player.getClan();
                         String clanRole = player.getRole();
                         String ign = player.getName();
-                        clan = player.getClan();
                         String clanName = clan.getName();
+
+                        int townhallLevel = player.getTownHallLevel();
                         int trophies = player.getTrophies();
                         int maxTrophies = player.getBestTrophies();
+                        int attackWins = player.getAttackWins();
+                        int bbTrophies = player.getBuilderBaseTrophies();
+                        int bbMaxTrophies = player.getBuilderBaseBestTrophies();
+                        int bbWinCount = player.getBuilderBaseWinCount();
+                        int bbLevel = player.getBuilderHallLevel();
+                        int defenseWins = player.getDefenseWins();
+                        int donations = player.getDonations();
+                        int donationsReceived = player.getDonationsReceived();
+                        int expLevel = player.getExpLevel();
+                        int warStars = player.getWarStars();
 
 
-                        ignView.setText(ign);
-                        trophiesView.setText(""+trophies);
-                        maxTrophiesView.setText(""+maxTrophies);
-                        clanTv.setText(clanName);
-                        thTv.setText(""+townhallLevel);
+
+
+
+                        ignView.setText("   " + ign);
+                        trophiesView.setText("   " + trophies);
+                        maxTrophiesView.setText("   " + maxTrophies);
+                        clanTv.setText("   " + clanName);
+                        thTv.setText("   " + townhallLevel);
+                        roleTv.setText("   " + clanRole);
 
                         List<Troop> heroes = player.getHeroes();
                     } catch (IOException e) {
@@ -143,7 +158,7 @@ public class UserFragment extends Fragment {
 //        toast.show();
 
         String sTitle = getArguments().getString("title");
-        textView.setText(sTitle);
+        //textView.setText(sTitle);
         return view;
     }
 }

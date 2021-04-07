@@ -60,11 +60,11 @@ public class TestClashAPI extends AppCompatActivity {
 //        }
 
 
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-
-            String id = extras.getString("id");
-        }
+//        Bundle extras = getIntent().getExtras();
+//        if (extras != null) {
+//
+//            String id = extras.getString("id");
+//        }
 
         tabLayout = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.view_pager);

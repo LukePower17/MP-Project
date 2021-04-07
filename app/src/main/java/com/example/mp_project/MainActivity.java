@@ -12,16 +12,22 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.mp_project.exception.ClashException;
+import com.example.mp_project.cocmodels.player.Player;
+import com.example.mp_project.cocmodels.player.Troop;
+import com.example.mp_project.core.ClashAPI;
+import com.example.mp_project.core.exception.ClashAPIException;
 
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     //Token:
-    String API_TOKEN = "eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjNmNmJkMWM1LThkZmEtNDFiZC05ZDYyLTEwMWE3ZmU3MGM1ZSIsImlhdCI6MTYxMzA4MDg5Miwic3ViIjoiZGV2ZWxvcGVyLzVjNGFjZmQ4LWQ3MmQtNjcyZS1mNDFlLWIyY2ZiNzE0ZGZlOSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjY4LjM1LjI0OS4xNDkiXSwidHlwZSI6ImNsaWVudCJ9XX0.0SrYHSxi0wv85BxxmfWAispA73yRGUySAWcpvzw7XoQF_1WOj2ZPyrZXfCFH2Cy4YlZ7YOa49-ZyWzhSDmOStQ";
+    String API_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjNmNmJkMWM1LThkZmEtNDFiZC05ZDYyLTEwMWE3ZmU3MGM1ZSIsImlhdCI6MTYxMzA4MDg5Miwic3ViIjoiZGV2ZWxvcGVyLzVjNGFjZmQ4LWQ3MmQtNjcyZS1mNDFlLWIyY2ZiNzE0ZGZlOSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjY4LjM1LjI0OS4xNDkiXSwidHlwZSI6ImNsaWVudCJ9XX0.0SrYHSxi0wv85BxxmfWAispA73yRGUySAWcpvzw7XoQF_1WOj2ZPyrZXfCFH2Cy4YlZ7YOa49-ZyWzhSDmOStQ";
+    String MyID = "YOGVVRGU";
+    String MyClan = "PO2CUUUU";
     //Allowed IP:
     //68.35.249.149
 
@@ -37,29 +43,30 @@ public class MainActivity extends AppCompatActivity {
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_LONG;
 
-        userID = (EditText)findViewById(R.id.userId);
+        //userID = (EditText)findViewById(R.id.userId);
         submit = (Button)findViewById(R.id.submitBtn);
-        idTV = (TextView)findViewById(R.id.idTextView);
+        //idTV = (TextView)findViewById(R.id.idTextView);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(userID.getText().toString().equals(""))
-                {
-                    Toast toast = Toast.makeText(context, "Please enter a valid ID", duration);
-                    toast.show();
-                    idTV.setTextColor(Color.RED);
-                }
-                else
-                {
-//                    ClashAPI clashAPI = BTClashWrapper.getAPIInstance(API_TOKEN);
+//                if(userID.getText().toString().equals(""))
+//                {
+//                    Toast toast = Toast.makeText(context, "Please enter a valid ID", duration);
+//                    toast.show();
+//                    idTV.setTextColor(Color.RED);
+//                }
+//                else
+//                {
 //
-//                    // use ClashAPI here
-                    Intent HomeActivityIntent = new Intent(MainActivity.this, TestClashAPI.class);
-                    HomeActivityIntent.putExtra("id", userID.getText().toString());
-                    startActivity(HomeActivityIntent);
-                }
+//                    Intent HomeActivityIntent = new Intent(MainActivity.this, TestClashAPI.class);
+//                    HomeActivityIntent.putExtra("id", userID.getText().toString());
+//                    startActivity(HomeActivityIntent);
+//                }
+                Intent HomeActivityIntent = new Intent(MainActivity.this, TestClashAPI.class);
+                //HomeActivityIntent.putExtra("id", userID.getText().toString());
+                startActivity(HomeActivityIntent);
             }
         });
 

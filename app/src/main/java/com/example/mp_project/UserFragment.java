@@ -116,7 +116,6 @@ public class UserFragment extends Fragment {
                         String clanRole = player.getRole();
                         String ign = player.getName();
                         String clanName = clan.getName();
-
                         int townhallLevel = player.getTownHallLevel();
                         int trophies = player.getTrophies();
                         int maxTrophies = player.getBestTrophies();
@@ -130,10 +129,6 @@ public class UserFragment extends Fragment {
                         int donationsReceived = player.getDonationsReceived();
                         int expLevel = player.getExpLevel();
                         int warStars = player.getWarStars();
-
-
-
-
 
                         ignView.setText("   " + ign);
                         trophiesView.setText("   " + trophies);

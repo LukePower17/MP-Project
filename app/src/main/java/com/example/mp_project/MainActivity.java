@@ -43,27 +43,30 @@ public class MainActivity extends AppCompatActivity {
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_LONG;
 
-        userID = (EditText)findViewById(R.id.userId);
+        //userID = (EditText)findViewById(R.id.userId);
         submit = (Button)findViewById(R.id.submitBtn);
-        idTV = (TextView)findViewById(R.id.idTextView);
+        //idTV = (TextView)findViewById(R.id.idTextView);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(userID.getText().toString().equals(""))
-                {
-                    Toast toast = Toast.makeText(context, "Please enter a valid ID", duration);
-                    toast.show();
-                    idTV.setTextColor(Color.RED);
-                }
-                else
-                {
-
-                    Intent HomeActivityIntent = new Intent(MainActivity.this, TestClashAPI.class);
-                    HomeActivityIntent.putExtra("id", userID.getText().toString());
-                    startActivity(HomeActivityIntent);
-                }
+//                if(userID.getText().toString().equals(""))
+//                {
+//                    Toast toast = Toast.makeText(context, "Please enter a valid ID", duration);
+//                    toast.show();
+//                    idTV.setTextColor(Color.RED);
+//                }
+//                else
+//                {
+//
+//                    Intent HomeActivityIntent = new Intent(MainActivity.this, TestClashAPI.class);
+//                    HomeActivityIntent.putExtra("id", userID.getText().toString());
+//                    startActivity(HomeActivityIntent);
+//                }
+                Intent HomeActivityIntent = new Intent(MainActivity.this, TestClashAPI.class);
+                //HomeActivityIntent.putExtra("id", userID.getText().toString());
+                startActivity(HomeActivityIntent);
             }
         });
 

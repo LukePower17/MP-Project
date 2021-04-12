@@ -77,15 +77,56 @@ public class ClanFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_clan, container, false);
+        EditText CidEt = (EditText) view.findViewById(R.id.CuserIdEt);
 
-        TextView ignView = (TextView) view.findViewById(R.id.ignTv);
-        TextView trophiesView = (TextView) view.findViewById(R.id.trophiesTv);
-        TextView maxTrophiesView = (TextView) view.findViewById(R.id.maxTrophiesTv);
-        TextView clanTv = (TextView) view.findViewById(R.id.clanTv);
-        TextView thTv = (TextView) view.findViewById(R.id.townhallTv);
-        TextView roleTv = (TextView) view.findViewById(R.id.roleTv);
-        EditText idEt = (EditText) view.findViewById(R.id.userIdEt);
+        TextView exceptionView = (TextView) view.findViewById(R.id.CexceptionTv);
+        TextView clanLevelView = (TextView) view.findViewById(R.id.clanLevelTv);
+        TextView clanPointsView = (TextView) view.findViewById(R.id.clanPointsTv);
+        TextView clanVersusPointsView = (TextView) view.findViewById(R.id.clanVersusPointsTv);
+        TextView clanCountView = (TextView) view.findViewById(R.id.clanMemberCountTv);
+        TextView clanReqView = (TextView) view.findViewById(R.id.RequiredTrophiesTv);
+        TextView clanWinsView = (TextView) view.findViewById(R.id.clanWinsTv);
+        TextView clanWinStreakView = (TextView) view.findViewById(R.id.clanWinStreakTv);
+        TextView clanDescriptionView = (TextView) view.findViewById(R.id.clanDescriptionTv);
+        TextView clanLocationView = (TextView) view.findViewById(R.id.clanLocationTv);
+        TextView clanNameView = (TextView) view.findViewById(R.id.clanNameTvC);
+        TextView clanFrequencyView = (TextView) view.findViewById(R.id.clanFrequencyTv);
 
+        TextView tv2 = (TextView)view.findViewById(R.id.CtextView2);
+        TextView tv3 = (TextView)view.findViewById(R.id.CtextView3);
+        TextView tv4 = (TextView)view.findViewById(R.id.CtextView4);
+        TextView tv5 = (TextView)view.findViewById(R.id.CtextView5);
+        TextView tv6 = (TextView)view.findViewById(R.id.CtextView6);
+        TextView tv7 = (TextView)view.findViewById(R.id.CtextView7);
+        TextView tv8 = (TextView)view.findViewById(R.id.CtextView8);
+        TextView tv9 = (TextView)view.findViewById(R.id.CtextView9);
+        TextView tv10 = (TextView)view.findViewById(R.id.CtextView10);
+        TextView tv11 = (TextView)view.findViewById(R.id.CtextView11);
+        TextView tv12 = (TextView)view.findViewById(R.id.CtextView12);
+
+        clanLevelView.setVisibility(View.GONE);
+        clanPointsView.setVisibility(View.GONE);
+        clanVersusPointsView.setVisibility(View.GONE);
+        clanCountView.setVisibility(View.GONE);
+        clanReqView.setVisibility(View.GONE);
+        clanWinsView.setVisibility(View.GONE);
+        clanWinStreakView.setVisibility(View.GONE);
+        clanDescriptionView.setVisibility(View.GONE);
+        clanLocationView.setVisibility(View.GONE);
+        clanNameView.setVisibility(View.GONE);
+        clanFrequencyView.setVisibility(View.GONE);
+
+        tv2.setVisibility(View.GONE);
+        tv3.setVisibility(View.GONE);
+        tv4.setVisibility(View.GONE);
+        tv5.setVisibility(View.GONE);
+        tv6.setVisibility(View.GONE);
+        tv7.setVisibility(View.GONE);
+        tv8.setVisibility(View.GONE);
+        tv9.setVisibility(View.GONE);
+        tv10.setVisibility(View.GONE);
+        tv11.setVisibility(View.GONE);
+        tv12.setVisibility(View.GONE);
 
         int SDK_INT = android.os.Build.VERSION.SDK_INT;
         if (SDK_INT > 8)
@@ -96,11 +137,7 @@ public class ClanFragment extends Fragment {
 
             ClashAPI clashAPI = new ClashAPI(API_TOKEN);
 
-            // 2. And do the requests you need. Yes, it's as simple :)
-//            Player player = null;
-//            ClanModel clan = null;
-
-            Button button = (Button) view.findViewById(R.id.button);
+            Button button = (Button) view.findViewById(R.id.Cbutton);
             button.setOnClickListener(new View.OnClickListener()
             {
                 @Override
@@ -108,40 +145,69 @@ public class ClanFragment extends Fragment {
                 {
                     try
                     {
-                        clan = clashAPI.getClan(idEt.getText().toString());
-                        clan.getClanLevel();
-                        clan.getClanPoints();
-                        clan.getClanVersusPoints();
-                        clan.getDescription();
-                        clan.getLocation();
-                        clan.getMembers();
-                        clan.getName();
-                        clan.getRequiredTrophies();
-                        clan.getWarFrequency();
-                        clan.getWarWins();
-                        clan.getWarWinStreak();
+                        clan = clashAPI.getClan(CidEt.getText().toString());
+                        int clanLevel = clan.getClanLevel();
+                        int clanPoints = clan.getClanPoints();
+                        int clanVPoints = clan.getClanVersusPoints();
+                        int clanCount = clan.getMembers();
+                        int clanReqTrophies = clan.getRequiredTrophies();
+                        int clanWins = clan.getWarWins();
+                        int clanWinStreak = clan.getWarWinStreak();
+                        String clanDescriptions = clan.getDescription();
+                        String clanLocation = clan.getLocation().getName();
+                        String clanName = clan.getName();
+                        String clanFrequency = clan.getWarFrequency();
 
+                        clanLevelView.setVisibility(View.VISIBLE);
+                        clanPointsView.setVisibility(View.VISIBLE);
+                        clanVersusPointsView.setVisibility(View.VISIBLE);
+                        clanCountView.setVisibility(View.VISIBLE);
+                        clanReqView.setVisibility(View.VISIBLE);
+                        clanWinsView.setVisibility(View.VISIBLE);
+                        clanWinStreakView.setVisibility(View.VISIBLE);
+                        clanDescriptionView.setVisibility(View.VISIBLE);
+                        clanLocationView.setVisibility(View.VISIBLE);
+                        clanNameView.setVisibility(View.VISIBLE);
+                        clanFrequencyView.setVisibility(View.VISIBLE);
 
+                        tv2.setVisibility(View.VISIBLE);
+                        tv3.setVisibility(View.VISIBLE);
+                        tv4.setVisibility(View.VISIBLE);
+                        tv5.setVisibility(View.VISIBLE);
+                        tv6.setVisibility(View.VISIBLE);
+                        tv7.setVisibility(View.VISIBLE);
+                        tv8.setVisibility(View.VISIBLE);
+                        tv9.setVisibility(View.VISIBLE);
+                        tv10.setVisibility(View.VISIBLE);
+                        tv11.setVisibility(View.VISIBLE);
+                        tv12.setVisibility(View.VISIBLE);
 
-
-
-
+                        clanLevelView.setText("   " + clanLevel);
+                        clanPointsView.setText("   " + clanPoints);
+                        clanVersusPointsView.setText("   " + clanVPoints);
+                        clanCountView .setText("   " + clanCount);
+                        clanReqView.setText("   " + clanReqTrophies);
+                        clanWinsView.setText("   " + clanWins);
+                        clanWinStreakView.setText("   " + clanWinStreak);
+                        clanDescriptionView.setText("   " + clanDescriptions);
+                        clanLocationView.setText("   " + clanLocation);
+                        clanNameView.setText("   " + clanName);
+                        clanFrequencyView.setText("   " + clanFrequency);
 
 
                     } catch (IOException e) {
                         e.printStackTrace();
+                        exceptionView.setText("   " + e.toString());
                     } catch (ClashAPIException e) {
                         e.printStackTrace();
+                        exceptionView.setText("   " + e.toString());
                     }
                 }
             });
 
 
         }
-
-//        Toast toast = Toast.makeText(context, clanRole, duration);
-//        toast.show();
-
+        
         return view;
     }
 }

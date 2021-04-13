@@ -6,19 +6,19 @@
     android:layout_height="match_parent"
     >
 
+
     <TextView
         android:layout_width="313dp"
         android:layout_height="142dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="509dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="448dp"
         android:fontFamily="sans-serif-black"
         android:text="Welcome to Clash of Stats!"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="36sp" />
-
 
     <ImageView
         android:id="@+id/imageView2"
@@ -27,7 +27,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="80dp"
-        android:layout_marginBottom="254dp"
+        android:layout_marginBottom="131dp"
         app:srcCompat="@drawable/barbarian2" />
 
     <Button
@@ -36,8 +36,18 @@
         android:layout_height="65dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="122dp"
-        android:layout_marginBottom="117dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="54dp"
         android:text="Start!" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="147dp"
+        android:layout_height="183dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="261dp"
+        android:layout_marginBottom="344dp"
+        app:srcCompat="@drawable/minion_info" />
 
 </RelativeLayout>

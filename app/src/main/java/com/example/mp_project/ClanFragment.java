@@ -21,55 +21,18 @@ import com.example.mp_project.core.exception.ClashAPIException;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ClanFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ClanFragment extends Fragment {
 
     String API_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjNmNmJkMWM1LThkZmEtNDFiZC05ZDYyLTEwMWE3ZmU3MGM1ZSIsImlhdCI6MTYxMzA4MDg5Miwic3ViIjoiZGV2ZWxvcGVyLzVjNGFjZmQ4LWQ3MmQtNjcyZS1mNDFlLWIyY2ZiNzE0ZGZlOSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjY4LjM1LjI0OS4xNDkiXSwidHlwZSI6ImNsaWVudCJ9XX0.0SrYHSxi0wv85BxxmfWAispA73yRGUySAWcpvzw7XoQF_1WOj2ZPyrZXfCFH2Cy4YlZ7YOa49-ZyWzhSDmOStQ";
-    Player player = null;
     ClanModel clan = null;
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public ClanFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ClanFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ClanFragment newInstance(String param1, String param2) {
-        ClanFragment fragment = new ClanFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -194,20 +157,21 @@ public class ClanFragment extends Fragment {
                         clanNameView.setText("   " + clanName);
                         clanFrequencyView.setText("   " + clanFrequency);
 
+                        exceptionView.setText("");
 
                     } catch (IOException e) {
                         e.printStackTrace();
-                        exceptionView.setText("   " + e.toString());
+                        exceptionView.setText("   An error has occurred! This ID is not valid or the API is under maintenance");
                     } catch (ClashAPIException e) {
                         e.printStackTrace();
-                        exceptionView.setText("   " + e.toString());
+                        exceptionView.setText("   An error has occurred! This ID is not valid or the API is under maintenance");
                     }
                 }
             });
 
 
         }
-        
+
         return view;
     }
 }

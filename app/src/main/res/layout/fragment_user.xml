@@ -14,13 +14,19 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:src="@drawable/cc_game_icon" />
+
 
         <TextView
             android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\n\n  Enter your user ID:"
-            android:textSize="18sp" />
+            android:textSize="19sp" />
 
         <EditText
             android:id="@+id/userIdEt"
@@ -34,167 +40,169 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Submit" />
+            android:text="Submit"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/exceptionTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\n  In-Game Name:"
-            android:textSize="18sp"
-            />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/ignTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\n  Trophy Count:"
-            android:textSize="18sp"
-             />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/trophiesTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\n  Highest Trophies:"
-            android:textSize="18sp"
-             />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/maxTrophiesTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\n  Townhall Level:"
-            android:textSize="18sp"
-             />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/townhallTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\n  Your experience level:"
-            android:textSize="18sp"
-            />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/levelTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\n  Attack wins:"
-            android:textSize="18sp"
-            />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/atkTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\n  Defense wins:"
-            android:textSize="18sp"
-            />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/defenseTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            android:textSize="15sp"/>
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\n  Clan:"
-            android:textSize="18sp"
-             />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/clanTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            android:textSize="15sp"/>
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\n  Your Clan Role:"
-            android:textSize="18sp"
-             />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/roleTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\n  Donations:"
-            android:textSize="18sp"
-            />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/donationTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\n  Donations Received:"
-            android:textSize="18sp"
-            />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/donationRTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            android:textSize="15sp" />
 
 
         <TextView
@@ -202,74 +210,74 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\n  Your Stars Earned in War:"
-            android:textSize="18sp"
-            />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/warStarTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\n  Builder Base Level:"
-            android:textSize="18sp"
-            />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/bbLevelTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/textView15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\n  Your Wins in Builder Base:"
-            android:textSize="18sp"
-            />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/bbWinsTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/textView16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\n  Your Highest Builder Base Trophies: "
-            android:textSize="18sp"
-            />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/bbMaxTrophiesTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/textView17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\n  Your Current Builder Base Trophies:"
-            android:textSize="18sp"
-            />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/bbTrophiesTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            android:textSize="15sp" />
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="275dp"
+            android:layout_width="match_parent"
             android:layout_height="240dp"
             android:src="@drawable/sneaky_archer_info" />
 

@@ -41,31 +41,6 @@ public class TestClashAPI extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.clashapi);
 
-        //ParseJson parseJson = new ParseJson();
-//        JSONObject json = null;
-//        try {
-//            json = readJsonFromUrl("https://graph.facebook.com/19292868552");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//        if(json != null) {
-//            Log.d("myTag", json.toString());
-//            try {
-//                Log.d("myTag2", json.get("id").toString());
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//        }
-
-
-//        Bundle extras = getIntent().getExtras();
-//        if (extras != null) {
-//
-//            String id = extras.getString("id");
-//        }
-
         tabLayout = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.view_pager);
 
